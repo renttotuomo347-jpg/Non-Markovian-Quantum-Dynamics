@@ -71,7 +71,7 @@ shots = 1000
 
 R_values = [0.2, 2.0, 20]
 
-n_times = 5
+n_times = 15
 
   
 
