@@ -42,16 +42,9 @@ def amplitude_damping(R, t, initial_state='+'):
 
         qc.h(sys)
 
-    elif initial_state == '-':
-
-        qc.h(sys)
-        qc.z(sys)
-
-
     theta = np.arccos(c1(R, t))
 
-
-    qc.cu(2*theta, 0, 0, 0, sys, env)
+    qc.cry(2*theta, sys, env)
     qc.cx(env, sys)
 
     #No measurement
