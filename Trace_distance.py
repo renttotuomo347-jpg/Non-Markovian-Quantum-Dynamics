@@ -45,7 +45,7 @@ def amplitude_damping(R, t, initial_state='+'):
     theta = np.arccos(c1(R, t))
 
     #Entaglement and qubit swap
-    qc.cu(2*theta, 0, 0, 0, sys, env)
+    qc.cry(2*theta, sys, env)
     qc.cx(env, sys)
 
     #No measurement
@@ -71,7 +71,7 @@ def trace_distance(rho1, rho2):
     delta = rho1.data - rho2.data
     
     #Eigenvalues
-    eigvals = np.linalg.eigvals(delta)
+    eigvals = np.linalg.eigvalsh(delta)
 
     return 0.5 * np.sum(np.abs(eigvals))
 
