@@ -112,7 +112,7 @@ for i, (R, t) in enumerate(labels):
 
     pub_result = result[i]
     
-    counts = pub_result.data[i].c.get_counts()
+    counts = pub_result.data.c.get_counts()
 
     p1 = counts.get('1', 0) / shots
 
